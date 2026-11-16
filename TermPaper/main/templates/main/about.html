@@ -1,0 +1,49 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}Про нас{% endblock %}
+
+{% block content %}
+<div class="features container">
+
+    <h1 class="text-center mb-4">Про нас</h1>
+
+    <!-- 🔹 Галерея -->
+    <div class="row g-4 mb-4">
+        <div class="col-12 col-md-4">
+            <img src="{% static 'main/img/chnu.png' %}" class="img-fluid rounded" alt="">
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="{% static 'main/img/chnu_2.jpg' %}" class="img-fluid rounded" alt="">
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="{% static 'main/img/chnu_3.jpg' %}" class="img-fluid rounded" alt="">
+        </div>
+    </div>
+
+    <!-- 🔹 Текст -->
+    <div class="text-start fs-5">
+        <p>
+            У цьому порталі ви знайдете все, що потрібно сучасному студенту:
+            корисні матеріали, новини університету, цікаві події та можливості
+            для саморозвитку.
+        </p>
+
+        <p>
+            Ми віримо, що студентське життя – це не лише лекції та екзамени,
+            а й дружба, спільні проєкти, творчі ініціативи та незабутні враження.
+        </p>
+
+        <p>
+            На сторінках порталу ви завжди зможете знайти актуальні новини університету,
+            корисні матеріали для навчання, інформацію про події та активності.
+        </p>
+
+        <p class="fw-semibold">
+            Наша мета – зробити студентське життя яскравим, насиченим та продуктивним.
+            Приєднуйтесь до нашої спільноти!
+        </p>
+    </div>
+
+</div>
+{% endblock %}

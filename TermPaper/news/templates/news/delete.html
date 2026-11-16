@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Видалити новину{% endblock %}
+
+{% block content %}
+<div class="auth-wrapper">
+    <div class="auth-card text-center">
+
+        <h3 class="mb-4 text-danger">
+            Ви впевнені, що хочете видалити новину?
+        </h3>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger w-100">
+                Видалити новину
+            </button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

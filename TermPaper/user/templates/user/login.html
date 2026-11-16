@@ -1,0 +1,46 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Увійти{% endblock %}
+
+{% block content %}
+
+<div class="auth-wrapper">
+
+    <div class="card auth-card shadow-sm">
+
+        <h2 class="auth-title">Вхід користувача</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                {{ form.login }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.password }}
+            </div>
+
+            {% if error %}
+            <div class="auth-error">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <button class="btn btn-success w-100" type="submit">
+                Увійти
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p>Немає акаунта?</p>
+            <a href="{% url 'join' %}" class="btn btn-outline-info">
+                Зареєструватись
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

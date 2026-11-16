@@ -1,0 +1,40 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+
+<div class="article-wrapper">
+
+    <div class="card article-card shadow-sm">
+
+        <h2 class="article-title">{{ article.title }}</h2>
+
+        {% if article.image %}
+        <div class="article-image">
+            <img src="{{ article.image.url }}"
+                 alt="{{ article.title }}"
+                 class="article-img">
+        </div>
+        {% endif %}
+
+        <div class="article-text">
+            {{ article.full_text|linebreaks }}
+        </div>
+
+        {% if user_admin %}
+        <div class="article-actions">
+            <a href="{% url 'news_update' article.id %}" class="btn btn-info">
+                Редагувати
+            </a>
+            <a href="{% url 'news_delete' article.id %}" class="btn btn-danger">
+                Видалити
+            </a>
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

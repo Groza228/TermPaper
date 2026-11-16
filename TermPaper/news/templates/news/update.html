@@ -1,0 +1,47 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Редагувати новину{% endblock %}
+
+{% block content %}
+<div class="auth-wrapper">
+    <div class="auth-card">
+
+        <h2 class="auth-title">Редагувати новину</h2>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                {{ form.title }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.anons }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.full_text }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.date }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.image }}
+            </div>
+
+            {% if error %}
+                <div class="auth-error">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <button type="submit" class="btn btn-primary w-100">
+                Зберегти зміни
+            </button>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

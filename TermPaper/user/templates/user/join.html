@@ -1,0 +1,58 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Зареєструватись{% endblock %}
+
+{% block content %}
+
+<div class="auth-wrapper">
+
+    <div class="card auth-card shadow-sm">
+
+        <h2 class="auth-title">Реєстрація користувача</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                {{ form.first_name }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.last_name }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.email }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.login }}
+            </div>
+
+            <div class="mb-3">
+                {{ form.password }}
+            </div>
+
+            {% if error %}
+            <div class="auth-error">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <button class="btn btn-success w-100" type="submit">
+                Зареєструватись
+            </button>
+        </form>
+
+        <div class="auth-footer">
+            <p>Маєте акаунт?</p>
+            <a href="{% url 'login' %}" class="btn btn-outline-info">
+                Увійти
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
